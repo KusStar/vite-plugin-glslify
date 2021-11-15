@@ -26,7 +26,46 @@ export default {
 
 That's it, now it will compile your glslify shader code.
 
-Other details, see [glslify](https://github.com/glslify/glslify)
+It will transpile **glsl\`...\`** or **glsl(\`...\`)**.
+
+Other details, see [glslify](https://github.com/glslify/glslify).
+
+## Example
+
+
+```js
+const frag = glsl`
+  #pragma glslify: ease = require('glsl-easings/sine-in')
+  precision mediump float;
+
+  varying vec3 vpos;
+  void main () {
+    gl_FragColor = vec4(ease(vpos*25.0),1);
+  }
+`
+```
+
+Will be transpile to
+
+```js
+const frag = `
+  #ifndef HALF_PI
+  #define HALF_PI 1.5707963267948966
+  #endif
+
+  float sineIn(float t) {
+    return sin((t - 1.0) * HALF_PI) + 1.0;
+  }
+
+  precision mediump float;
+
+  varying vec3 vpos;
+  void main () {
+    gl_FragColor = vec4(ease(vpos*25.0),1);
+  }
+`
+```
+
 
 ## Options
 
@@ -46,7 +85,7 @@ export interface Options {
    */
   exclude?: FilterPattern
   /**
-   * funcName that should compile defaults to [/glsl/]
+   * function calling that should be compiled, defaults to [/glsl/]
    */
   funcName?: FilterPattern
 }
