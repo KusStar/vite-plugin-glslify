@@ -11,7 +11,7 @@
     "start": "npm run build -- --watch",
     "build": "tsup src/index.ts --dts --format cjs,esm",
     "prepublishOnly": "npm run build",
-    "lint": "eslint --ext .ts ./",
+    "lint": "eslint --ext .ts ./src",
     "lint:fix": "npm run lint -- --fix",
     "release": "npm run lint && release-it"
   },
