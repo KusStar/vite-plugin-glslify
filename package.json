@@ -13,7 +13,7 @@
     "prepublishOnly": "npm run build",
     "lint": "eslint --ext .ts ./src",
     "lint:fix": "npm run lint -- --fix",
-    "release": "npm run lint && release-it"
+    "release": "npm run lint && npm run build && release-it"
   },
   "files": [
     "dist"
