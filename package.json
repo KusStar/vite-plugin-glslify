@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-glslify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Literals collector for Vite",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
