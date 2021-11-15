@@ -1,0 +1,37 @@
+{
+  "name": "vite-plugin-glslify",
+  "version": "1.0.0",
+  "description": "Literals collector for Vite",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "author": "KusStar",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run build -- --watch",
+    "build": "tsup src/index.ts --dts --format cjs,esm",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint --ext .ts ./",
+    "lint:fix": "npm run lint -- --fix",
+    "release": "npm run lint && release-it"
+  },
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "vite": "^2.6.3"
+  },
+  "dependencies": {
+    "@rollup/pluginutils": "^4.1.1",
+    "glslify": "^7.1.1"
+  },
+  "devDependencies": {
+    "@kuss/eslint-config-vanilla": "^2.2.0",
+    "eslint": "^8.2.0",
+    "magic-string": "^0.25.7",
+    "release-it": "^14.11.7",
+    "tsup": "^5.7.0",
+    "typescript": "^4.4.4",
+    "vite": "^2.6.14"
+  }
+}
