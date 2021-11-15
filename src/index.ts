@@ -14,7 +14,7 @@ export interface Options {
    */
   exclude?: FilterPattern
   /**
-   * funcName that should compile defaults to [/glsl/]
+   * function calling that should be compiled, defaults to [/glsl/]
    */
   funcName?: FilterPattern
 }
