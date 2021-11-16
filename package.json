@@ -23,12 +23,12 @@
   },
   "dependencies": {
     "@rollup/pluginutils": "^4.1.1",
-    "glslify": "^7.1.1"
+    "glslify": "^7.1.1",
+    "magic-string": "^0.25.7"
   },
   "devDependencies": {
     "@kuss/eslint-config-vanilla": "^2.2.0",
     "eslint": "^8.2.0",
-    "magic-string": "^0.25.7",
     "release-it": "^14.11.7",
     "tsup": "^5.7.0",
     "typescript": "^4.4.4",
