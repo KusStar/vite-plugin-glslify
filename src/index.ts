@@ -37,8 +37,12 @@ export function glslifyCompiler(options: Options = {}) {
 
         const compileAndOverwrite = (node: any, start: number, end: number) => {
           const target = generate(node)
-          const compiled = compile(target)
-          s.overwrite(start, end, `${compiled}`)
+          try {
+            const compiled = compile(target)
+            s.overwrite(start, end, `${compiled}`)
+          } catch (e) {
+            this.error(e)
+          }
         }
 
         walk(ast, {
