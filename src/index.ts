@@ -1,4 +1,5 @@
 import { createFilter, FilterPattern } from '@rollup/pluginutils'
+import { generate } from 'astring'
 import { walk } from 'estree-walker'
 import { compile } from 'glslify'
 import MagicString from 'magic-string'
@@ -26,37 +27,34 @@ export function glslifyCompiler(options: Options = {}) {
   )
 
   const funcFilter = createFilter(options.funcName || [/glsl/])
-
   return <Plugin>{
     name: 'vite-plugin-glslify',
     transform(code, id) {
       if (!filter(id)) return undefined
-
       if (funcFilter(code)) {
         const ast = this.parse(code)
         const s = new MagicString(code)
 
+        const compileAndOverwrite = (node: any, start: number, end: number) => {
+          const target = generate(node)
+          const compiled = compile(target)
+          s.overwrite(start, end, `${compiled}`)
+        }
+
         walk(ast, {
           enter(node) {
-            const { value } = node
-            if (!value) {
+            if (!node.type) {
               return
             }
-            if (value.type === 'TaggedTemplateExpression') {
-              if (funcFilter(value.tag.name)) {
-                const { start, end } = value
-                const target = value.quasi.quasis[0]
-                const raw = target.value.raw
-                const compiled = compile(raw)
-                s.overwrite(start, end, `\`${compiled}\``)
+            if (node?.type === 'TaggedTemplateExpression') {
+              if (funcFilter(node.tag.name)) {
+                const { start, end } = node
+                compileAndOverwrite(node.quasi, start, end)
               }
-            } else if (value.type === 'CallExpression') {
-              if (funcFilter(value.callee.name)) {
-                const { start, end } = value
-                const target = value.arguments[0].quasis[0]
-                const raw = target.value.raw
-                const compiled = compile(raw)
-                s.overwrite(start, end, `\`${compiled}\``)
+            } else if (node?.type === 'CallExpression') {
+              if (funcFilter(node.callee.name)) {
+                const { start, end } = node
+                compileAndOverwrite(node.arguments[0], start, end)
               }
             }
           }
