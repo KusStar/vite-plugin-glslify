@@ -45,7 +45,7 @@ const frag = glsl`
 `
 ```
 
-Will be transpile to
+Will be transpiled to
 
 ```js
 const frag = `
@@ -66,8 +66,9 @@ const frag = `
 `
 ```
 
+Or you can import files with extensions like `*.glsl`, `*.vert`, `*.frag`, see [example](./example).
 
-## Options
+## Interfaces
 
 ```ts
 /**
@@ -75,20 +76,39 @@ const frag = `
  */
 export type FilterPattern = ReadonlyArray<string | RegExp> | string | RegExp | null;
 
-export interface Options {
-  /**
-   * included files or folder, defaults to [/\.ts$/, /\.js$/]
-   */
-  include?: FilterPattern
-  /**
-   * excluded files or folder, defaults to ['node_modules/**']
-   */
-  exclude?: FilterPattern
-  /**
-   * function calling that should be compiled, defaults to [/glsl/]
-   */
-  funcName?: FilterPattern
+import { Plugin } from 'vite';
+import { FilterPattern } from '@rollup/pluginutils';
+
+interface Options {
+    /**
+     * included files or folder, defaults to [/\.ts$/, /\.js$/]
+     */
+    include?: FilterPattern;
+    /**
+     * excluded files or folder, defaults to ['node_modules/**']
+     */
+    exclude?: FilterPattern;
+    /**
+     * should transform files with literalsCompiler, defaults to true
+     */
+    transformLiterals?: boolean;
+    /**
+     * function calling that should be compiled, defaults to [/glsl/]
+     */
+    funcName?: FilterPattern;
+    /**
+     * should transform files with filesCompiler, defaults to true
+     */
+    transformFiles?: boolean;
+    /**
+     * extensions of files that should be compiled, defaults to [/\.vert$/, /\.frag$/, /\.glsl$/]
+     */
+    extensions?: FilterPattern;
 }
+
+declare const DEFAULT_EXTENSIONS: RegExp[];
+declare function glslifyCompiler(options?: Options): Plugin[];
+export { DEFAULT_EXTENSIONS, glslifyCompiler as default, glslifyCompiler };
 ```
 
 ## LICENSE
