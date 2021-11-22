@@ -89,7 +89,7 @@ interface Options {
      */
     exclude?: FilterPattern;
     /**
-     * should transform files with literalsCompiler, defaults to true
+     * should transform literals with literalsCompiler, defaults to true
      */
     transformLiterals?: boolean;
     /**
