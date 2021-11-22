@@ -18,7 +18,7 @@ export function literalsCompiler(idFilter: Filter, funcFilter: Filter): Plugin {
         const compileAndOverwrite = (node: any, start: number, end: number) => {
           const target = generate(node)
           try {
-            const compiled = compile(target.replaceAll('`', ''))
+            const compiled = compile(target.replace(/`/g, ''))
             s.overwrite(start, end, `\`${compiled}\``)
           } catch (e) {
             this.error(e.message)
