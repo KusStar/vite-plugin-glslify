@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@kuss/eslint-config-vanilla": "^2.4.0",
+    "@release-it/conventional-changelog": "^3.3.0",
     "eslint": "^8.2.0",
     "release-it": "^14.11.7",
     "tsup": "^5.7.0",
