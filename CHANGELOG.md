@@ -1,3 +1,6 @@
+* Merge pull request #4 from juliendargelos/feat/glslify-options (6e8ee9a)
+* feat: custom glslify options (dc28e90)
+
 * :rotating_light: chore: lint warnings (13505de)
 * Merge pull request #3 from juliendargelos/fix/relative-imports (5778fc4)
 * fix: specify basedir for relative imports (2d0b019)
