@@ -1,8 +1,8 @@
-import path from 'path'
 import { generate } from 'astring'
 import { walk } from 'estree-walker'
 import { compile } from 'glslify'
 import MagicString from 'magic-string'
+import path from 'path'
 import { Plugin } from 'vite'
 
 import type { Filter, GlslifyOptions } from './types'
