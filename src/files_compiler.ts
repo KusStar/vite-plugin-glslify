@@ -1,3 +1,4 @@
+import path from 'path'
 import { compile } from 'glslify'
 import { Plugin } from 'vite'
 
@@ -9,7 +10,9 @@ export function filesCompiler(extFilter: Filter): Plugin {
     transform(code, id) {
       if (extFilter(id)) {
         return {
-          code: `export default \`${compile(code)}\``
+          code: `export default \`${compile(code, {
+            basedir: path.dirname(id)
+          })}\``
         }
       }
       return null
@@ -18,7 +21,9 @@ export function filesCompiler(extFilter: Filter): Plugin {
       if (!extFilter(ctx.file)) return
       const defaultRead = ctx.read
       ctx.read = async () => {
-        return compile(await defaultRead())
+        return compile(await defaultRead(), {
+          basedir: path.dirname(ctx.file)
+        })
       }
     }
   }

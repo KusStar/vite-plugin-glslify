@@ -1,3 +1,4 @@
+import path from 'path'
 import { generate } from 'astring'
 import { walk } from 'estree-walker'
 import { compile } from 'glslify'
@@ -18,7 +19,9 @@ export function literalsCompiler(idFilter: Filter, funcFilter: Filter): Plugin {
         const compileAndOverwrite = (node: any, start: number, end: number) => {
           const target = generate(node)
           try {
-            const compiled = compile(target.replace(/`/g, ''))
+            const compiled = compile(target.replace(/`/g, ''), {
+              basedir: path.dirname(id)
+            })
             s.overwrite(start, end, `\`${compiled}\``)
           } catch (e) {
             this.error(e.message)
