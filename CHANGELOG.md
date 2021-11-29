@@ -1,3 +1,7 @@
+* :rotating_light: chore: lint warnings (13505de)
+* Merge pull request #3 from juliendargelos/fix/relative-imports (5778fc4)
+* fix: specify basedir for relative imports (2d0b019)
+
 ### [1.4.1](https://github.com/KusStar/vite-plugin-glslify/compare/1.4.0...1.4.1) (2021-11-22)
 
 ## [1.4.0](https://github.com/KusStar/vite-plugin-glslify/compare/1.4.0...1.4.1) (2021-11-21)
