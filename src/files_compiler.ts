@@ -1,5 +1,5 @@
-import path from 'path'
 import { compile } from 'glslify'
+import path from 'path'
 import { Plugin } from 'vite'
 
 import type { Filter } from './types'
