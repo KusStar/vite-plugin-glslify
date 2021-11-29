@@ -5,9 +5,13 @@ import { compile } from 'glslify'
 import MagicString from 'magic-string'
 import { Plugin } from 'vite'
 
-import type { Filter } from './types'
+import type { Filter, GlslifyOptions } from './types'
 
-export function literalsCompiler(idFilter: Filter, funcFilter: Filter): Plugin {
+export function literalsCompiler(
+  idFilter: Filter,
+  funcFilter: Filter,
+  options: GlslifyOptions
+): Plugin {
   return {
     name: 'vite-plugin-glslify:literals',
     transform(code, id) {
@@ -20,6 +24,7 @@ export function literalsCompiler(idFilter: Filter, funcFilter: Filter): Plugin {
           const target = generate(node)
           try {
             const compiled = compile(target.replace(/`/g, ''), {
+              ...options,
               basedir: path.dirname(id)
             })
             s.overwrite(start, end, `\`${compiled}\``)

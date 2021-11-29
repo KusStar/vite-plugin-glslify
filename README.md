@@ -79,6 +79,13 @@ export type FilterPattern = ReadonlyArray<string | RegExp> | string | RegExp | n
 import { Plugin } from 'vite';
 import { FilterPattern } from '@rollup/pluginutils';
 
+declare type GlslifyTransform<Options = any> = (filename: string, src: string, options: Options, done: (error: any, src: string) => void) => string;
+interface GlslifyOptions {
+    transforms?: (GlslifyTransform | string | [
+        GlslifyTransform | string,
+        any
+    ])[];
+}
 interface Options {
     /**
      * included files or folder, defaults to [/\.ts$/, /\.js$/]
@@ -104,10 +111,15 @@ interface Options {
      * extensions of files that should be compiled, defaults to [/\.vert$/, /\.frag$/, /\.glsl$/]
      */
     extensions?: FilterPattern;
+    /**
+     * options passed to glslify
+     */
+    options?: GlslifyOptions;
 }
 
 declare const DEFAULT_EXTENSIONS: RegExp[];
 declare function glslifyCompiler(options?: Options): Plugin[];
+
 export { DEFAULT_EXTENSIONS, glslifyCompiler as default, glslifyCompiler };
 ```
 
