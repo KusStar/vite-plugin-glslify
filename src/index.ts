@@ -7,7 +7,7 @@ import { Options } from './types'
 
 export const DEFAULT_EXTENSIONS = [/\.vert$/, /\.frag$/, /\.glsl$/]
 
-export function glslifyCompiler(options: Options = {}) {
+export function glslify(options: Options = {}) {
   const plugins: Plugin[] = []
   const transformFiles = options.transformFiles ?? true
   const transformLiterals = options.transformLiterals ?? true
@@ -37,4 +37,4 @@ export function glslifyCompiler(options: Options = {}) {
   return plugins
 }
 
-export default glslifyCompiler
+export default glslify
