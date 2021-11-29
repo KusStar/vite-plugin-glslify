@@ -15,11 +15,11 @@ Add it to `vite.config.*`
 
 ```js
 // vite.config.js
-import glslifyCompiler from 'vite-plugin-glslify'
+import glslify from 'vite-plugin-glslify'
 
 export default {
   plugins: [
-    glslifyCompiler()
+    glslify()
   ],
 }
 ```
@@ -118,9 +118,9 @@ interface Options {
 }
 
 declare const DEFAULT_EXTENSIONS: RegExp[];
-declare function glslifyCompiler(options?: Options): Plugin[];
+declare function glslify(options?: Options): Plugin[];
 
-export { DEFAULT_EXTENSIONS, glslifyCompiler as default, glslifyCompiler };
+export { DEFAULT_EXTENSIONS, glslify as default, glslify };
 ```
 
 ## LICENSE
