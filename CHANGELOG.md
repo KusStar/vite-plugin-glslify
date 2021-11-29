@@ -1,3 +1,7 @@
+* docs: README.md use exported glslify (bf493fc)
+* Merge pull request #5 from juliendargelos/feat/conventional-export-name (2ba05c8)
+* BREAKING CHANGE: use conventional export name (efea810)
+
 * Merge pull request #4 from juliendargelos/feat/glslify-options (6e8ee9a)
 * feat: custom glslify options (dc28e90)
 
