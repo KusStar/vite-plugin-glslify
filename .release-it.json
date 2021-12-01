@@ -18,8 +18,16 @@
           {
             "type": "fix",
             "section": "Bug Fixes"
-          },
-          {}
+          }
+        ]
+      },
+      "parserOpts": {
+        "headerPattern": "^(:\\w+:\\s+)?(\\w*)(?:\\(([\\w\\$\\.\\-\\* ]*)\\))?\\: (.*)$",
+        "headerCorrespondence": [
+          "gitmoji",
+          "type",
+          "scope",
+          "subject"
         ]
       }
     }
