@@ -118,9 +118,9 @@ interface Options {
 }
 
 declare const DEFAULT_EXTENSIONS: RegExp[];
-declare function glslifyCompiler(options?: Options): Plugin[];
+declare function glslify(options?: Options): Plugin[];
 
-export { DEFAULT_EXTENSIONS, glslifyCompiler as default, glslifyCompiler };
+export { DEFAULT_EXTENSIONS, glslify as default, glslify };
 ```
 
 ## LICENSE
