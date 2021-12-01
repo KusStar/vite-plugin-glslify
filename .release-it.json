@@ -8,6 +8,7 @@
   "plugins": {
     "@release-it/conventional-changelog": {
       "infile": "CHANGELOG.md",
+      "ignoreRecommendedBump": true,
       "parserOpts": {
         "headerPattern": "^(:\\w+:\\s+)?(\\w*)(?:\\(([\\w\\$\\.\\-\\* ]*)\\))?\\: (.*)$",
         "headerCorrespondence": [
