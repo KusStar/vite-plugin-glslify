@@ -1,3 +1,8 @@
+* chore: ignore package-lock.json (7b8f969)
+* Merge pull request #6 from juliendargelos/feat/conventional-export-name (d510f7a)
+* Merge branch 'KusStar:main' into feat/conventional-export-name (3089770)
+* doc: update README.md (2accc6c)
+
 * docs: README.md use exported glslify (bf493fc)
 * Merge pull request #5 from juliendargelos/feat/conventional-export-name (2ba05c8)
 * BREAKING CHANGE: use conventional export name (efea810)
