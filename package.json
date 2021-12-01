@@ -35,5 +35,31 @@
     "tsup": "^5.7.0",
     "typescript": "^4.4.4",
     "vite": "^2.6.14"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release ${version}",
+      "tagName": "v${version}"
+    },
+    "npm": {
+      "publish": true
+    },
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "infile": "CHANGELOG.md",
+        "parserOpts": {
+          "headerPattern": "^(:\\w+:\\s+)?(\\w*)(?:\\(([\\w\\$\\.\\-\\* ]*)\\))?\\: (.*)$",
+          "headerCorrespondence": [
+            "gitmoji",
+            "type",
+            "scope",
+            "subject"
+          ]
+        }
+      }
+    }
   }
 }
