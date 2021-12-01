@@ -1,3 +1,5 @@
+* chore: fix release-it changelog (9e428dc)
+
 * chore: ignore package-lock.json (7b8f969)
 * Merge pull request #6 from juliendargelos/feat/conventional-export-name (d510f7a)
 * Merge branch 'KusStar:main' into feat/conventional-export-name (3089770)
