@@ -25,7 +25,7 @@ export function literalsCompiler(
           try {
             const compiled = compile(target.replace(/`/g, ''), {
               ...options,
-              basedir: path.dirname(id)
+              basedir: path.dirname(id),
             })
             s.overwrite(start, end, `\`${compiled}\``)
           } catch (e) {
@@ -49,14 +49,14 @@ export function literalsCompiler(
                 compileAndOverwrite(node.arguments[0], start, end)
               }
             }
-          }
+          },
         })
 
         return {
-          code: s.toString()
+          code: s.toString(),
         }
       }
       return undefined
-    }
+    },
   }
 }

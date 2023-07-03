@@ -14,12 +14,8 @@ export function glslify(options: Options = {}) {
   const glslifyOptions = options.options ?? {}
 
   if (transformFiles) {
-    const extFilter = createFilter(
-      options.extensions || DEFAULT_EXTENSIONS
-    )
-    plugins.push(
-      filesCompiler(extFilter, glslifyOptions)
-    )
+    const extFilter = createFilter(options.extensions || DEFAULT_EXTENSIONS)
+    plugins.push(filesCompiler(extFilter, glslifyOptions))
   }
 
   if (transformLiterals) {
@@ -29,9 +25,7 @@ export function glslify(options: Options = {}) {
     )
     const funcFilter = createFilter(options.funcName || [/glsl/])
 
-    plugins.push(
-      literalsCompiler(idFilter, funcFilter, glslifyOptions)
-    )
+    plugins.push(literalsCompiler(idFilter, funcFilter, glslifyOptions))
   }
 
   return plugins

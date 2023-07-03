@@ -10,10 +10,7 @@ export type GlslifyTransform<Options = any> = (
 ) => string
 
 export interface GlslifyOptions {
-  transforms?: (
-   GlslifyTransform | string |
-   [GlslifyTransform | string, any]
-  )[]
+  transforms?: (GlslifyTransform | string | [GlslifyTransform | string, any])[]
 }
 
 export interface Options {

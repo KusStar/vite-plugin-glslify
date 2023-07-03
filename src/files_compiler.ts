@@ -4,7 +4,10 @@ import { Plugin } from 'vite'
 
 import type { Filter, GlslifyOptions } from './types'
 
-export function filesCompiler(extFilter: Filter, options: GlslifyOptions): Plugin {
+export function filesCompiler(
+  extFilter: Filter,
+  options: GlslifyOptions
+): Plugin {
   return {
     name: 'vite-plugin-glslify:files',
     transform(code, id) {
@@ -12,8 +15,8 @@ export function filesCompiler(extFilter: Filter, options: GlslifyOptions): Plugi
         return {
           code: `export default \`${compile(code, {
             ...options,
-            basedir: path.dirname(id)
-          })}\``
+            basedir: path.dirname(id),
+          })}\``,
         }
       }
       return null
@@ -24,9 +27,9 @@ export function filesCompiler(extFilter: Filter, options: GlslifyOptions): Plugi
       ctx.read = async () => {
         return compile(await defaultRead(), {
           ...options,
-          basedir: path.dirname(ctx.file)
+          basedir: path.dirname(ctx.file),
         })
       }
-    }
+    },
   }
 }
