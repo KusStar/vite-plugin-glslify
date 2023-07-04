@@ -1,3 +1,12 @@
+
+
+## <small>2.0.2 (2023-07-04)</small>
+
+* chores: bump devDeps ([ad151bc](https://github.com/KusStar/vite-plugin-glslify/commit/ad151bc))
+* chores: bump example deps ([849838a](https://github.com/KusStar/vite-plugin-glslify/commit/849838a))
+* Fix/changelog (#7) ([be4d8cb](https://github.com/KusStar/vite-plugin-glslify/commit/be4d8cb)), closes [#7](https://github.com/KusStar/vite-plugin-glslify/issues/7)
+* fixed semvar, run lint, updated version to beta.2 ([d989481](https://github.com/KusStar/vite-plugin-glslify/commit/d989481))
+
 ## <small>2.0.2-beta.1 (2021-12-01)</small>
 
 * chore: update release-it ([ca7870c](https://github.com/KusStar/vite-plugin-glslify/commit/ca7870c))
@@ -100,4 +109,3 @@
 * Release 1.0.1 ([7095013](https://github.com/KusStar/vite-plugin-glslify/commit/7095013))
 * :rotating_light: lint: only for src ([b797d5e](https://github.com/KusStar/vite-plugin-glslify/commit/b797d5e))
 * :memo: doc: README.md ([c07ce05](https://github.com/KusStar/vite-plugin-glslify/commit/c07ce05))
-
