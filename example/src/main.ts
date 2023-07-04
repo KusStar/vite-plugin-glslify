@@ -6,7 +6,7 @@ import testVert from './test.vert'
 console.log(testVert, testFrag)
 
 // any function wrapped by `glsl` will be transpiled to a string at build time
-const glsl = (...args: any[]) => ''
+const glsl = (..._args: any[]) => ''
 
 const vert = glsl`
 varying vec2 vUv;
