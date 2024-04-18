@@ -1,5 +1,13 @@
 
 
+## 2.1.0 (2024-04-18)
+
+* chores: package description ([8e9ae8b](https://github.com/KusStar/vite-plugin-glslify/commit/8e9ae8b))
+* chore: bump vite dependency (example) to latest (5.2.9) ([25163f8](https://github.com/KusStar/vite-plugin-glslify/commit/25163f8))
+* chore: bump vite dependency (peer & dev) to latest (5.2.9) ([c391bca](https://github.com/KusStar/vite-plugin-glslify/commit/c391bca))
+* chore: update scripts to be prefixed with pnpm ([d0924a8](https://github.com/KusStar/vite-plugin-glslify/commit/d0924a8))
+* fix: add missing dep estree-walker@2.0.2 ([e888135](https://github.com/KusStar/vite-plugin-glslify/commit/e888135))
+
 ## <small>2.0.2 (2023-07-04)</small>
 
 * chores: bump devDeps ([ad151bc](https://github.com/KusStar/vite-plugin-glslify/commit/ad151bc))
