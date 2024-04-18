@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-glslify",
   "version": "2.0.2",
-  "description": "Literals collector for Vite",
+  "description": "A plugin for Vite to compile glslify shader code",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
