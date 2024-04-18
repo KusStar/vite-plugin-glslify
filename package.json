@@ -25,7 +25,8 @@
     "@rollup/pluginutils": "^4.1.1",
     "astring": "^1.7.5",
     "glslify": "^7.1.1",
-    "magic-string": "^0.25.7"
+    "magic-string": "^0.25.7",
+    "estree-walker": "^2.0.2"
   },
   "devDependencies": {
     "@kuss/eslint-config-vanilla": "^2.6.1",
