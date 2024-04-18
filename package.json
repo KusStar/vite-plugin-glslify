@@ -8,12 +8,12 @@
   "author": "KusStar",
   "license": "MIT",
   "scripts": {
-    "start": "npm run build -- --watch",
+    "start": "pnpm run build -- --watch",
     "build": "tsup src/index.ts --dts --format cjs,esm",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "pnpm run build",
     "lint": "eslint --ext .ts ./src",
-    "lint:fix": "npm run lint -- --fix",
-    "release": "npm run lint && npm run build && release-it"
+    "lint:fix": "pnpm run lint -- --fix",
+    "release": "pnpm run lint && pnpm run build && release-it"
   },
   "files": [
     "dist"
