@@ -8,22 +8,23 @@
   "author": "KusStar",
   "license": "MIT",
   "scripts": {
-    "start": "npm run build -- --watch",
+    "start": "pnpm run build -- --watch",
     "build": "tsup src/index.ts --dts --format cjs,esm",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "pnpm run build",
     "lint": "eslint --ext .ts ./src",
-    "lint:fix": "npm run lint -- --fix",
-    "release": "npm run lint && npm run build && release-it"
+    "lint:fix": "pnpm run lint -- --fix",
+    "release": "pnpm run lint && pnpm run build && release-it"
   },
   "files": [
     "dist"
   ],
   "peerDependencies": {
-    "vite": "^4.3.9"
+    "vite": "^5.2.9"
   },
   "dependencies": {
     "@rollup/pluginutils": "^4.1.1",
     "astring": "^1.7.5",
+    "estree-walker": "^2.0.2",
     "glslify": "^7.1.1",
     "magic-string": "^0.25.7"
   },
@@ -34,6 +35,6 @@
     "release-it": "^15.11.0",
     "tsup": "^7.1.0",
     "typescript": "^5.1.6",
-    "vite": "^4.3.9"
+    "vite": "^5.2.9"
   }
 }
