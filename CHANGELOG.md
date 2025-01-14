@@ -1,5 +1,11 @@
 
 
+## 2.2.0 (2025-01-14)
+
+* chores: lockfile and peer version ([a60ebaa](https://github.com/KusStar/vite-plugin-glslify/commit/a60ebaa))
+* fix: package exports field ([55c798b](https://github.com/KusStar/vite-plugin-glslify/commit/55c798b))
+* docs: Update README.md Usage ([8d22009](https://github.com/KusStar/vite-plugin-glslify/commit/8d22009))
+
 ## 2.1.0 (2024-04-18)
 
 * chores: package description ([8e9ae8b](https://github.com/KusStar/vite-plugin-glslify/commit/8e9ae8b))
