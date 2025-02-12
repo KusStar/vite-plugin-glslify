@@ -1,5 +1,9 @@
 
 
+## <small>2.2.1 (2025-02-12)</small>
+
+* Fix Vite peerDeps broken ([a623d05](https://github.com/KusStar/vite-plugin-glslify/commit/a623d05)), closes [#14](https://github.com/KusStar/vite-plugin-glslify/issues/14)
+
 ## 2.2.0 (2025-01-14)
 
 * chores: lockfile and peer version ([a60ebaa](https://github.com/KusStar/vite-plugin-glslify/commit/a60ebaa))
