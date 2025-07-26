@@ -1,5 +1,9 @@
 
 
+## 2.3.0 (2025-07-26)
+
+* fix: support vite v6 in peerDependencies ([6471f37](https://github.com/KusStar/vite-plugin-glslify/commit/6471f37))
+
 ## <small>2.2.1 (2025-02-12)</small>
 
 * Fix Vite peerDeps broken ([a623d05](https://github.com/KusStar/vite-plugin-glslify/commit/a623d05)), closes [#14](https://github.com/KusStar/vite-plugin-glslify/issues/14)
